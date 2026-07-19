@@ -28,6 +28,12 @@
   };
 
   home.packages = with pkgs; [
+    neovim
     yazi
   ];
+
+  xdg.configFile."nvim" = {
+    source = ./dotfiles/nvim;
+    recursive = true;
+  };
 }
