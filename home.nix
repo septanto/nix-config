@@ -27,6 +27,33 @@
 
   };
 
+  programs.zsh = {
+    enable = true;
+    autosuggestion.enable = true;
+    syntaxHighlighting.enable = true;
+    enableCompletion = true;
+
+    # optional but nice: persistent history
+    history = {
+      size = 10000;
+      save = 10000;
+      ignoreDups = true;
+      share = true;
+    };
+
+    plugins = [
+      {
+        name = "powerlevel10k";
+        src = pkgs.zsh-powerlevel10k;
+        file = "share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
+      }
+    ];
+
+    initContent = ''
+      [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+    '';
+  };
+
   home.packages = with pkgs; [
     clang
     clang-tools
@@ -34,6 +61,7 @@
     fzf
     lldb
     neovim
+    nixd
     ripgrep
     tree-sitter
     yazi

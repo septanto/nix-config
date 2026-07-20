@@ -77,17 +77,18 @@
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users."septanto" = {
-    isNormalUser = true;
     description = "Septanto";
     extraGroups = [ "networkmanager" "wheel" ];
+    isNormalUser = true;
     packages = with pkgs; [
       kdePackages.kate
-    #  thunderbird
     ];
+    shell = pkgs.zsh;
   };
 
   # Install firefox.
   programs.firefox.enable = true;
+  programs.zsh.enable = true;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
