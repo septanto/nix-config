@@ -28,7 +28,14 @@
   };
 
   home.packages = with pkgs; [
+    clang
+    clang-tools
+    fuzzel
+    fzf
+    lldb
     neovim
+    ripgrep
+    tree-sitter
     yazi
   ];
 

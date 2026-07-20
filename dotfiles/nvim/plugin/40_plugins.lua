@@ -161,10 +161,10 @@ later(function() add({ 'https://github.com/rafamadriz/friendly-snippets' }) end)
 -- If you need them to work elsewhere, consider using other package managers.
 --
 -- You can use it like so:
-now_if_args(function()
-  add({ 'https://github.com/mason-org/mason.nvim' })
-  require('mason').setup()
-end)
+-- now_if_args(function()
+--   add({ 'https://github.com/mason-org/mason.nvim' })
+--   require('mason').setup()
+-- end)
 
 -- Render Markdown
 add({
@@ -187,25 +187,25 @@ add({
 })
 
 local dap = require('dap')
-local codelldb = vim.fn.stdpath('data') .. '/mason/packages/codelldb/extension/adapter/codelldb'
-
-dap.adapters.codelldb = {
-  type = 'server',
-  port = 13000,
-  executable = { command = codelldb, args = { '--port', '13000' } },
-}
-
-dap.configurations.c = {
-  {
-    name = 'Launch file',
-    type = 'codelldb',
-    request = 'launch',
-    program = function()
-      return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
-    end,
-    cwd = '${workspaceFolder}',
-    stopOnEntry = false,
-  },
-}
+-- local codelldb = vim.fn.stdpath('data') .. '/mason/packages/codelldb/extension/adapter/codelldb'
+--
+-- dap.adapters.codelldb = {
+--   type = 'server',
+--   port = 13000,
+--   executable = { command = codelldb, args = { '--port', '13000' } },
+-- }
+--
+-- dap.configurations.c = {
+--   {
+--     name = 'Launch file',
+--     type = 'codelldb',
+--     request = 'launch',
+--     program = function()
+--       return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
+--     end,
+--     cwd = '${workspaceFolder}',
+--     stopOnEntry = false,
+--   },
+-- }
 
 require('dap-view').setup({})

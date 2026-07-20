@@ -93,9 +93,7 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     brightnessctl
-    fuzzel
     kitty
-    neovim
     nerd-fonts.iosevka
     nerd-fonts.iosevka-term
     noto-fonts
