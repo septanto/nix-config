@@ -11,6 +11,14 @@
   # Let Home Manager manage itself
   programs.home-manager.enable = true;
 
+  programs.kitty = {
+    shellIntegration.enableZshIntegration = true;
+    settings = {
+        enable_audio_bell = false;
+        hide_window_decorations = "titlebar-only";
+    };
+  };
+
   programs.git = {
     enable = true;
     settings = {
