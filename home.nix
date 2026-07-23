@@ -70,6 +70,7 @@
     lldb
     neovim
     nixd
+    opencode
     ripgrep
     tree-sitter
     yazi
