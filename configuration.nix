@@ -125,13 +125,19 @@
     };
   };
 
-  # EDITOR
   environment.variables.EDITOR = "nvim";
 
   # waybar
   programs.waybar.enable = true;
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
+
+  nix.gc = {
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-than 14d";
+  };
+
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
