@@ -11,14 +11,6 @@
   # Let Home Manager manage itself
   programs.home-manager.enable = true;
 
-  programs.kitty = {
-    shellIntegration.enableZshIntegration = true;
-    settings = {
-        enable_audio_bell = false;
-        hide_window_decorations = "titlebar-only";
-    };
-  };
-
   programs.git = {
     enable = true;
     settings = {
@@ -76,6 +68,14 @@
     yazi
   ];
 
+  xdg.configFile."kitty" = {
+    source = ./dotfiles/kitty;
+    recursive = true;
+  };
+  xdg.configFile."niri" = {
+    source = ./dotfiles/niri;
+    recursive = true;
+  };
   xdg.configFile."nvim" = {
     source = ./dotfiles/nvim;
     recursive = true;
