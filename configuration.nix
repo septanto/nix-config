@@ -100,6 +100,7 @@
     noto-fonts
     noto-fonts-cjk-sans
     noto-fonts-color-emoji
+    playerctl
     pavucontrol
     wget
     wlogout
@@ -126,9 +127,6 @@
   };
 
   environment.variables.EDITOR = "nvim";
-
-  # waybar
-  programs.waybar.enable = true;
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
 

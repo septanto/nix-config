@@ -55,6 +55,7 @@
   };
 
   home.packages = with pkgs; [
+    btop
     clang
     clang-tools
     fuzzel
@@ -65,6 +66,7 @@
     opencode
     ripgrep
     tree-sitter
+    waybar
     yazi
   ];
 
