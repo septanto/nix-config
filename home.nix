@@ -56,19 +56,47 @@
 
   home.packages = with pkgs; [
     btop
+    candy-icons
     clang
     clang-tools
     fuzzel
     fzf
     lldb
+    lxappearance
+    nautilus
     neovim
     nixd
     opencode
+    qimgv
     ripgrep
+    swaybg
+    bibata-cursors
     tree-sitter
     waybar
     yazi
   ];
+
+  gtk = {
+    enable = true;
+    iconTheme = {
+        name = "candy-icons";
+        package = pkgs.candy-icons;
+    };
+    cursorTheme = {
+      name = "Bibata-Modern-Ice";
+      package = pkgs.bibata-cursors;
+      size = 24;
+    };
+  };
+
+  home.pointerCursor = {
+    enable = true;
+    gtk.enable = true;
+    x11.enable = true;
+    name = "Bibata-Modern-Ice";
+    package = pkgs.bibata-cursors;
+    size = 24;
+  };
 
   xdg.configFile."kitty" = {
     source = ./dotfiles/kitty;
