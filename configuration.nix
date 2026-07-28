@@ -56,6 +56,10 @@
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
+  # Enable bluetooth.
+  hardware.bluetooth.enable = true;
+  hardware.bluetooth.powerOnBoot = true;
+
   # Enable sound with pipewire.
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;
@@ -93,6 +97,8 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    bluez
+    blueman
     brightnessctl
     kitty
     nerd-fonts.iosevka
