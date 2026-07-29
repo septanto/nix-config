@@ -11,6 +11,20 @@
   # Let Home Manager manage itself
   programs.home-manager.enable = true;
 
+  imports = [
+    inputs.noctalia.homeModules.default
+  ];
+
+  programs.firefox = {
+      enable = true;
+      package = pkgs.firefox-devedition;
+  };
+
+  programs.noctalia = {
+      enable = true;
+      systemd.enable = true;
+  };
+
   programs.git = {
     enable = true;
     settings = {
@@ -69,10 +83,8 @@
     opencode
     qimgv
     ripgrep
-    swaybg
     bibata-cursors
     tree-sitter
-    waybar
     yazi
   ];
 

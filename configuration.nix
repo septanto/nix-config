@@ -79,6 +79,10 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
+  # noctalia v5 req
+  services.power-profiles-daemon.enable = true;
+  services.upower.enable = true;
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users."septanto" = {
     description = "Septanto";
@@ -90,26 +94,18 @@
     shell = pkgs.zsh;
   };
 
-  # Install firefox.
-  programs.firefox.enable = true;
   programs.zsh.enable = true;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    bluez
-    blueman
-    brightnessctl
     kitty
     nerd-fonts.iosevka
     nerd-fonts.iosevka-term
     noto-fonts
     noto-fonts-cjk-sans
     noto-fonts-color-emoji
-    playerctl
-    pavucontrol
     wget
-    wlogout
   ];
 
   # Font
