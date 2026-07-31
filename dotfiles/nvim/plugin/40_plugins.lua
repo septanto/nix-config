@@ -166,7 +166,7 @@ require('neogit').setup({
   graph_style = 'kitty'
 })
 
--- DAP & DAP View
+-- Debugging
 add({
   'https://codeberg.org/mfussenegger/nvim-dap',
   'https://github.com/igorlfs/nvim-dap-view'
@@ -195,3 +195,13 @@ local dap = require('dap')
 -- }
 
 require('dap-view').setup({})
+
+-- Extra Colorschemes
+  add({
+    'https://github.com/EdenEast/nightfox.nvim',
+    'https://github.com/Shatur/neovim-ayu',
+    'https://github.com/folke/tokyonight.nvim',
+    'https://github.com/rebelot/kanagawa.nvim',
+    'https://github.com/rose-pine/neovim',
+    'https://github.com/vague-theme/vague.nvim',
+  })
