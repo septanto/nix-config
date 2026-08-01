@@ -73,7 +73,6 @@
     candy-icons
     clang
     clang-tools
-    fuzzel
     fzf
     lldb
     lxappearance

@@ -8,6 +8,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      inputs.noctalia-greeter.nixosModules.default
     ];
 
   # Bootloader.
@@ -37,12 +38,16 @@
   services.displayManager.sddm.enable = false;
   programs.niri.enable = true;
 
-  services.greetd = {
+  programs.noctalia-greeter = {
     enable = true;
     settings = {
-      default_session = {
-        command = "${pkgs.tuigreet}/bin/tuigreet --time --cmd niri-session";
-        user = "greeter";
+      session.default = "Niri";
+      user.default = "septanto";
+      keyboard.layout = "us";
+      cursor = {
+        theme = "Bibata-Modern-Ice";
+        size = 24;
+        path = "${pkgs.bibata-cursors}/share/icons";
       };
     };
   };
@@ -80,8 +85,8 @@
   # services.xserver.libinput.enable = true;
 
   # no suspend on lid close (see dotfiles/niri/config.kdl lid-close switch event)
-  services.logind.lidSwitch = "ignore";
-  services.logind.lidSwitchExternalPower = "ignore";
+  services.logind.settings.Login.HandleLidSwitch = "ignore";
+  services.logind.settings.Login.HandleLidSwitchExternalPower = "ignore";
 
   # noctalia v5 req
   services.power-profiles-daemon.enable = true;
@@ -104,6 +109,7 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     kitty
+    bibata-cursors
     nerd-fonts.iosevka
     nerd-fonts.iosevka-term
     noto-fonts
