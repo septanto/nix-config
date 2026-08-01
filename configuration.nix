@@ -79,6 +79,10 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
+  # no suspend on lid close (see dotfiles/niri/config.kdl lid-close switch event)
+  services.logind.lidSwitch = "ignore";
+  services.logind.lidSwitchExternalPower = "ignore";
+
   # noctalia v5 req
   services.power-profiles-daemon.enable = true;
   services.upower.enable = true;
