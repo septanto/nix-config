@@ -69,6 +69,7 @@
   };
 
   home.packages = with pkgs; [
+    bibata-cursors
     btop
     candy-icons
     clang
@@ -82,7 +83,6 @@
     opencode
     qimgv
     ripgrep
-    bibata-cursors
     tree-sitter
     yazi
   ];

@@ -99,6 +99,7 @@
     isNormalUser = true;
     packages = with pkgs; [
       kdePackages.kate
+      kdePackages.okular
     ];
     shell = pkgs.zsh;
   };
