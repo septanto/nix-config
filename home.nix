@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, ... }:
+{ config, pkgs, ... }:
 
 {
   home.username = "septanto";
@@ -11,18 +11,9 @@
   # Let Home Manager manage itself
   programs.home-manager.enable = true;
 
-  imports = [
-    inputs.noctalia.homeModules.default
-  ];
-
   programs.firefox = {
       enable = true;
       package = pkgs.firefox-devedition;
-  };
-
-  programs.noctalia = {
-      enable = true;
-      systemd.enable = true;
   };
 
   programs.git = {
@@ -75,6 +66,7 @@
     clang
     clang-tools
     fzf
+    herdr
     lldb
     lxappearance
     nautilus

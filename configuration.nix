@@ -38,6 +38,11 @@
   services.displayManager.sddm.enable = false;
   programs.niri.enable = true;
 
+  programs.noctalia = {
+    enable = true;
+    systemd.enable = true;
+  };
+
   programs.noctalia-greeter = {
     enable = true;
     settings = {
