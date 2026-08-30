@@ -59,7 +59,7 @@
     '';
   };
 
-  home.packages = with pkgs; [
+home.packages = with pkgs; [
     bibata-cursors
     btop
     candy-icons
@@ -75,6 +75,7 @@
     opencode
     qimgv
     ripgrep
+    tailscale
     tree-sitter
     yazi
   ];

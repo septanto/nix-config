@@ -28,6 +28,19 @@
   # Enable networking
   networking.networkmanager.enable = true;
 
+  # Tailscale VPN
+  services.tailscale.enable = true;
+
+  # SSH daemon
+  services.openssh.enable = true;
+
+  # Firewall: only allow SSH from Tailscale CIDR (100.64.0.0/10)
+  networking.firewall = {
+    allowedUDPPorts = [ config.services.tailscale.port ];
+    allowedTCPPorts = [ 22 ];
+    trustedInterfaces = [ "tailscale0" ];
+  };
+
   # Set your time zone.
   time.timeZone = "Asia/Jakarta";
 
@@ -121,6 +134,7 @@
     noto-fonts
     noto-fonts-cjk-sans
     noto-fonts-color-emoji
+    tailscale
     wget
   ];
 

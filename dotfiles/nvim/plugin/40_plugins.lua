@@ -110,8 +110,9 @@ now_if_args(function()
   vim.lsp.enable({
     -- For example, if `lua-language-server` is installed, use `'lua_ls'` entry
     'lua_ls',
-    'clangd',
-    'nixd'
+  'clangd',
+    'nixd',
+    'tsc'
   })
 end)
 
