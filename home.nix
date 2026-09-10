@@ -77,6 +77,7 @@ home.packages = with pkgs; [
     ripgrep
     tailscale
     tree-sitter
+    visidata
     yazi
   ];
 

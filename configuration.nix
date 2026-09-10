@@ -2,13 +2,12 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, inputs, ... }:
+{ config, pkgs, ... }:
 
 {
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      inputs.noctalia-greeter.nixosModules.default
     ];
 
   # Bootloader.
@@ -56,17 +55,15 @@
     systemd.enable = true;
   };
 
-  programs.noctalia-greeter = {
+  services.displayManager.noctalia-greeter = {
     enable = true;
     settings = {
-      session.default = "Niri";
-      user.default = "septanto";
+      cursor.size = 24;
       keyboard.layout = "us";
-      cursor = {
-        theme = "Bibata-Modern-Ice";
-        size = 24;
-        path = "${pkgs.bibata-cursors}/share/icons";
-      };
+    };
+    cursorTheme = {
+      package = pkgs.bibata-cursors;
+      name = "Bibata-Modern-Ice";
     };
   };
 
@@ -155,6 +152,37 @@
         monospace = [ "Iosevka Nerd Font" ];
         emoji = [ "Noto Color Emoji" ];
       };
+
+      localConf = ''
+        <?xml version="1.0"?>
+        <!DOCTYPE fontconfig SYSTEM "fonts.dtd">
+        <fontconfig>
+          <match target="font">
+            <test name="family"><string>Iosevka Nerd Font</string></test>
+            <edit name="fontfeatures" mode="append">
+              <string>ss14 on</string>
+            </edit>
+          </match>
+          <match target="font">
+            <test name="family"><string>Iosevka Nerd Font Mono</string></test>
+            <edit name="fontfeatures" mode="append">
+              <string>ss14 on</string>
+            </edit>
+          </match>
+          <match target="font">
+            <test name="family"><string>IosevkaTerm Nerd Font</string></test>
+            <edit name="fontfeatures" mode="append">
+              <string>ss14 on</string>
+            </edit>
+          </match>
+          <match target="font">
+            <test name="family"><string>IosevkaTerm Nerd Font Mono</string></test>
+            <edit name="fontfeatures" mode="append">
+              <string>ss14 on</string>
+            </edit>
+          </match>
+        </fontconfig>
+      '';
     };
   };
 
