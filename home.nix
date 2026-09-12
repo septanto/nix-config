@@ -65,6 +65,7 @@ home.packages = with pkgs; [
     candy-icons
     clang
     clang-tools
+    direnv
     fzf
     herdr
     lldb

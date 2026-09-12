@@ -205,3 +205,5 @@ add({
   'https://github.com/Shatur/neovim-ayu',
   'https://github.com/vague-theme/vague.nvim',
 })
+
+vim.cmd('colorscheme tokyonight-night')

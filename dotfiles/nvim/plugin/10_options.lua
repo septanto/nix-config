@@ -96,10 +96,6 @@ vim.o.completetimeout = 100                             -- Limit sources delay
 local f = function() vim.cmd('setlocal formatoptions-=c formatoptions-=o') end
 Config.new_autocmd('FileType', nil, f, "Proper 'formatoptions'")
 
--- Keep the background transparent for any color scheme (including nvim's
--- built-in `default`). See 'lua/subdued/transparent.lua' for details.
-Config.later(function() require('subdued.transparent').setup() end)
-
 -- There are other autocommands created by 'mini.basics'. See 'plugin/30_mini.lua'.
 
 -- Diagnostics ================================================================

@@ -160,25 +160,25 @@
           <match target="font">
             <test name="family"><string>Iosevka Nerd Font</string></test>
             <edit name="fontfeatures" mode="append">
-              <string>ss14 on</string>
+              <string>ss04 on</string>
             </edit>
           </match>
           <match target="font">
             <test name="family"><string>Iosevka Nerd Font Mono</string></test>
             <edit name="fontfeatures" mode="append">
-              <string>ss14 on</string>
+              <string>ss04 on</string>
             </edit>
           </match>
           <match target="font">
             <test name="family"><string>IosevkaTerm Nerd Font</string></test>
             <edit name="fontfeatures" mode="append">
-              <string>ss14 on</string>
+              <string>ss04 on</string>
             </edit>
           </match>
           <match target="font">
             <test name="family"><string>IosevkaTerm Nerd Font Mono</string></test>
             <edit name="fontfeatures" mode="append">
-              <string>ss14 on</string>
+              <string>ss04 on</string>
             </edit>
           </match>
         </fontconfig>
