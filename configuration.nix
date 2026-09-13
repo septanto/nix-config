@@ -5,10 +5,10 @@
 { config, pkgs, ... }:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-    ];
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+  ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -46,7 +46,7 @@
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
 
-    # Niri (Wayland compositor) via greetd login manager
+  # Niri (Wayland compositor) via greetd login manager
   services.displayManager.sddm.enable = false;
   programs.niri.enable = true;
 
@@ -110,7 +110,10 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users."septanto" = {
     description = "Septanto";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+    ];
     isNormalUser = true;
     packages = with pkgs; [
       kdePackages.kate
@@ -138,11 +141,11 @@
   # Font
   fonts = {
     packages = with pkgs; [
-     nerd-fonts.iosevka
-     nerd-fonts.iosevka-term
-     noto-fonts
-     noto-fonts-cjk-sans
-     noto-fonts-color-emoji
+      nerd-fonts.iosevka
+      nerd-fonts.iosevka-term
+      noto-fonts
+      noto-fonts-cjk-sans
+      noto-fonts-color-emoji
     ];
 
     fontconfig = {
@@ -188,7 +191,10 @@
 
   environment.variables.EDITOR = "nvim";
 
-  nix.settings.experimental-features = ["nix-command" "flakes"];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 
   nix.gc = {
     automatic = true;

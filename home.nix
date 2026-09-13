@@ -12,8 +12,8 @@
   programs.home-manager.enable = true;
 
   programs.firefox = {
-      enable = true;
-      package = pkgs.firefox-devedition;
+    enable = true;
+    package = pkgs.firefox-devedition;
   };
 
   programs.git = {
@@ -59,13 +59,18 @@
     '';
   };
 
-home.packages = with pkgs; [
+  programs.direnv = {
+    enable = true;
+    nix-direnv.enable = true;
+    enableZshIntegration = true;
+  };
+
+  home.packages = with pkgs; [
     bibata-cursors
     btop
     candy-icons
     clang
     clang-tools
-    direnv
     fzf
     herdr
     lldb
@@ -85,8 +90,8 @@ home.packages = with pkgs; [
   gtk = {
     enable = true;
     iconTheme = {
-        name = "candy-icons";
-        package = pkgs.candy-icons;
+      name = "candy-icons";
+      package = pkgs.candy-icons;
     };
     cursorTheme = {
       name = "Bibata-Modern-Ice";
