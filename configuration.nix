@@ -155,37 +155,6 @@
         monospace = [ "Iosevka Nerd Font" ];
         emoji = [ "Noto Color Emoji" ];
       };
-
-      localConf = ''
-        <?xml version="1.0"?>
-        <!DOCTYPE fontconfig SYSTEM "fonts.dtd">
-        <fontconfig>
-          <match target="font">
-            <test name="family"><string>Iosevka Nerd Font</string></test>
-            <edit name="fontfeatures" mode="append">
-              <string>ss04 on</string>
-            </edit>
-          </match>
-          <match target="font">
-            <test name="family"><string>Iosevka Nerd Font Mono</string></test>
-            <edit name="fontfeatures" mode="append">
-              <string>ss04 on</string>
-            </edit>
-          </match>
-          <match target="font">
-            <test name="family"><string>IosevkaTerm Nerd Font</string></test>
-            <edit name="fontfeatures" mode="append">
-              <string>ss04 on</string>
-            </edit>
-          </match>
-          <match target="font">
-            <test name="family"><string>IosevkaTerm Nerd Font Mono</string></test>
-            <edit name="fontfeatures" mode="append">
-              <string>ss04 on</string>
-            </edit>
-          </match>
-        </fontconfig>
-      '';
     };
   };
 

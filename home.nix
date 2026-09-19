@@ -78,8 +78,8 @@
     nautilus
     neovim
     nixd
-    opencode
     qimgv
+    pi-coding-agent
     ripgrep
     tailscale
     tree-sitter
