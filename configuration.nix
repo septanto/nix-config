@@ -67,6 +67,18 @@
     };
   };
 
+  # Fingerprint reader
+  # Enroll per-user after rebuilding:   fprintd-enroll
+  # Verify:                             fprintd-verify
+  services.fprintd.enable = true;
+
+  # Noctalia's lock screen enables fingerprint unlock by default and drives the
+  # reader itself via fprintd's D-Bus API. It authenticates the *password*
+  # against the "login" PAM stack, so keep pam_fprintd out of that stack to
+  # avoid two consumers contending for the sensor. greetd substacks "login",
+  # so this also keeps the login greeter password-only.
+  security.pam.services.login.fprintAuth = false;
+
   # Keyboard layout (still needed for Wayland)
   services.xserver.xkb = {
     layout = "us";

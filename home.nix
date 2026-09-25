@@ -73,13 +73,16 @@
     clang-tools
     fzf
     herdr
+    jq
     lldb
     lxappearance
     nautilus
     neovim
+    nodejs_latest
     nixd
-    qimgv
+    opencode
     pi-coding-agent
+    qimgv
     ripgrep
     tailscale
     tree-sitter
@@ -108,6 +111,9 @@
     package = pkgs.bibata-cursors;
     size = 24;
   };
+
+  # pi coding agent keybindings
+  home.file.".pi/agent/keybindings.json".source = ./dotfiles/pi/keybindings.json;
 
   xdg.configFile."kitty" = {
     source = ./dotfiles/kitty;
