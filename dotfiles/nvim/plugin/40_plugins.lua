@@ -174,27 +174,6 @@ add({
 })
 
 local dap = require('dap')
--- local codelldb = vim.fn.stdpath('data') .. '/mason/packages/codelldb/extension/adapter/codelldb'
---
--- dap.adapters.codelldb = {
---   type = 'server',
---   port = 13000,
---   executable = { command = codelldb, args = { '--port', '13000' } },
--- }
---
--- dap.configurations.c = {
---   {
---     name = 'Launch file',
---     type = 'codelldb',
---     request = 'launch',
---     program = function()
---       return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
---     end,
---     cwd = '${workspaceFolder}',
---     stopOnEntry = false,
---   },
--- }
-
 require('dap-view').setup({})
 
 -- Extra Colorschemes
@@ -202,5 +181,4 @@ add({
   'https://github.com/folke/tokyonight.nvim',
   'https://github.com/EdenEast/nightfox.nvim',
 })
-
 vim.cmd('colorscheme tokyonight-night')
