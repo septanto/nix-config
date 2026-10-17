@@ -84,6 +84,7 @@
     pi-coding-agent
     qimgv
     ripgrep
+    sqlit-tui
     tailscale
     tree-sitter
     visidata
