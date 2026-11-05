@@ -72,7 +72,9 @@
     clang
     clang-tools
     fzf
+    go_latest
     herdr
+    herdr-desktop
     jq
     lldb
     lxappearance
@@ -80,7 +82,6 @@
     neovim
     nodejs_latest
     nixd
-    opencode
     pi-coding-agent
     qimgv
     ripgrep

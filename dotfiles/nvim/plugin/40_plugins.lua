@@ -180,5 +180,6 @@ require('dap-view').setup({})
 add({
   'https://github.com/folke/tokyonight.nvim',
   'https://github.com/EdenEast/nightfox.nvim',
+  'https://github.com/ellisonleao/gruvbox.nvim'
 })
-vim.cmd('colorscheme tokyonight-night')
+vim.cmd('colorscheme gruvbox')
