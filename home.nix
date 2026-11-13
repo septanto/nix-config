@@ -74,7 +74,7 @@
     fzf
     go_latest
     herdr
-    herdr-desktop
+    herdr-core
     jq
     lldb
     lxappearance
@@ -82,6 +82,7 @@
     neovim
     nodejs_latest
     nixd
+    opencode
     pi-coding-agent
     qimgv
     ripgrep
@@ -127,6 +128,10 @@
   };
   xdg.configFile."nvim" = {
     source = ./dotfiles/nvim;
+    recursive = true;
+  };
+  xdg.configFile."noctalia" = {
+    source = ./dotfiles/noctalia;
     recursive = true;
   };
 }
